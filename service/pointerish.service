@@ -1,0 +1,14 @@
+[Unit]
+Description=Pointerish server runs software at boot time. :)
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=Simple
+Restart=always
+RestartSec=1
+User=pointerish
+ExecStart=/usr/bin/env python ~/.config/services/autostart.py
+
+[Install]
+WantedBy=nulti-user.target
